@@ -98,7 +98,6 @@ Slider.prototype.onDrag = function( e ) {
     } else if ( this.x > this.boundMax ){
       this.x = this.boundMax;
     }
-
     this.slide( this.x );
     this.emit( 'slide', this._value );
   };
@@ -155,7 +154,7 @@ Slider.prototype.value = function( val ) {
 
 Slider.prototype.slide = function( x ) {
   // TODO: maybe top, left, nahhhh
-  this.handle.style[transform] = 'translate3d(' + x + 'px, 0, 0)';
+  this.handle.style[transform] = 'translate3d(' + Math.round( x ) + 'px, 0, 0)';
   this._value = this.map( x, this.boundMin, this.boundMax, this.options.min, this.options.max );
 }
 
