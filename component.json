@@ -7,7 +7,8 @@
   "dependencies": {
     "gorillatron/extend": "*",
     "component/domify": "*",
-    "component/emitter": "*"
+    "component/emitter": "*",
+    "mnmly/prefixed": "*"
   },
   "development": {},
   "license": "MIT",
@@ -16,11 +17,5 @@
   ],
   "styles": [
     "slider.css"
-  ],
-  "paths": [
-    "../"
-  ],
-  "local": [
-    "prefixed"
   ]
 }
