@@ -1,13 +1,12 @@
 {
   "name": "slider",
   "repo": "mnmly/slider",
-  "description": "slider component",
+  "description": "Really minimal slider component",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
     "gorillatron/extend": "*",
     "component/domify": "*",
-    "component/css": "*",
     "component/emitter": "*"
   },
   "development": {},
