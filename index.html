@@ -1,0 +1,44 @@
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0;">
+<link rel="stylesheet" href="build/build.css" type="text/css" media="screen" charset="utf-8">
+
+<style type="text/css" media="screen">
+
+.slider{
+  width: 250px;
+  height: 30px;
+  margin: 0 auto;
+  outline: 2px solid hsl(0, 0%, 30%);
+  margin-top: 40%;
+}
+
+.slider .handle{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: hsl(0, 0%, 30%);
+}
+
+.slider .handle:active{
+  box-shadow: 0 0px 3px black hsl(0, 0%, 20%);
+  background: hsl(0, 0%, 35%);
+}
+ 
+</style>
+<body>
+  <div id="slider"></div>
+</body>
+<script type="text/javascript" src='build/build.js'> </script>
+<script type="text/javascript">
+  var Slider = require( 'slider' );
+  slider = new Slider( document.querySelector('#slider'), { min: 6, max: 27, value: 20 } );
+  document.body.appendChild( slider.el );
+
+  slider.on( 'change', function( val ){
+    console.log( val );
+  });
+
+  slider.on( 'slide', function( val ){
+    console.log( val );
+  })
+
+</script>

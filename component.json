@@ -1,0 +1,27 @@
+{
+  "name": "slider",
+  "repo": "mnmly/slider",
+  "description": "slider component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "gorillatron/extend": "*",
+    "component/domify": "*",
+    "component/css": "*",
+    "component/emitter": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "slider.css"
+  ],
+  "paths": [
+    "../"
+  ],
+  "local": [
+    "prefixed"
+  ]
+}
