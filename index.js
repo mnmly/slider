@@ -39,8 +39,7 @@ function Slider( el, options ){
   this.el.appendChild( this.handle );
   this.bind();
 
-  this.boundMin = 0 - ( this.handle.clientWidth / 2 );
-  this.boundMax = this.el.clientWidth - this.handle.clientWidth * 0.5;
+  this.updateBounds();
 
   this.value( this.options.value );
 }
@@ -159,3 +158,14 @@ Slider.prototype.slide = function( x ) {
   this.handle.style[transform] = 'translate3d(' + x + 'px, 0, 0)';
   this._value = this.map( x, this.boundMin, this.boundMax, this.options.min, this.options.max );
 }
+
+/**
+ * Updates the bounds
+ *
+ * @api public
+ */
+
+Slider.prototype.updateBounds = function() {
+  this.boundMin = 0 - ( this.handle.clientWidth / 2 );
+  this.boundMax = this.el.clientWidth - this.handle.clientWidth * 0.5;
+};
