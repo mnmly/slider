@@ -29,11 +29,11 @@ var transform = prefixed( 'transform' ),
  */
 
 function Slider( el, options ){
-  
+
   Emitter.call( this );
-  
+
   this.el      = el;
-  this.handle  = domify( '<div class="handle"/>' )[0];
+  this.handle  = domify( '<div class="handle"/>' );
   this.options = extend( false, defaults, options );
   this.el.className += ' slider';
   this.el.appendChild( this.handle );
@@ -55,7 +55,7 @@ Slider.prototype.__proto__ = Emitter.prototype;
  */
 
 Slider.prototype.bind = function() {
-  
+
   var isTouchable = ( 'ontouchstart' in window ),
       onmousedown = isTouchable ? 'touchstart' : 'mousedown',
       onmousemove = isTouchable ? 'touchmove'  : 'mousemove',
@@ -74,7 +74,7 @@ Slider.prototype.bind = function() {
  */
 
 Slider.prototype.onDragStart = function( e ) {
-  
+
   e = /touch/.test( e.type ) ? e.touches[0] : e;
   this.dragging = true;
   this.downPos = {
@@ -90,7 +90,7 @@ Slider.prototype.onDragStart = function( e ) {
 Slider.prototype.onDrag = function( e ) {
 
   e = /touch/.test( e.type ) ? e.touches[0] : e;
-  
+
   if( this.dragging ){
     this.x = e.pageX - this.el.offsetLeft - this.downPos.x;
     if ( this.boundMin > this.x ){
@@ -130,7 +130,7 @@ Slider.prototype.map = function(value, istart, istop, ostart, ostop) {
 
 /**
  * Getter and setter for slider value
- * 
+ *
  * @param { Number } val
  * @api public
  */
@@ -138,7 +138,7 @@ Slider.prototype.map = function(value, istart, istop, ostart, ostop) {
 Slider.prototype.value = function( val ) {
 
   if( typeof val !== 'undefined' ){
-    
+
     this.x = this.map( val, this.options.min, this.options.max, this.boundMin, this.boundMax );
     this.slide( this.x );
   }
